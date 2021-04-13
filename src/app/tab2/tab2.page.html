@@ -7,17 +7,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list *ngFor="let data of isiData | async" [routerLink]="['/tab3',data.judul, data.isi, data.tanggal, data.nilai, data.gambar]">
+  <ion-list *ngFor="let data of isiData | async">
     <ion-item>
       <ion-label>
-        <h1>{{data.judul}}</h1>
+        <h1 [routerLink]="['/tab3',data.judul, data.isi, data.tanggal, data.nilai, data.gambar]">{{data.judul}}</h1>
         <p>{{data.isi}}</p>
         <p>{{data.tanggal}}</p>
         <p>{{data.nilai}}</p>
       </ion-label>
       <ion-img [src]="data.gambar"></ion-img>
-      <ion-button color="danger" (click)="delete()">DELETE</ion-button>
-      <ion-button color="warning" [routerLink]="['/edit',data.judul, data.isi, data.tanggal, data.nilai]">EDIT</ion-button>
+      <ion-button color="danger" (click)="delete(data.judul)">DELETE</ion-button>
+      <ion-button color="warning" [routerLink]="['/edit',data.judul, data.isi, data.tanggal, data.nilai, data.gambar]">EDIT</ion-button>
     </ion-item>
   </ion-list>
 </ion-content>

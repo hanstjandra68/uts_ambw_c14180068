@@ -22,7 +22,7 @@ export class Tab2Page {
   isiDataColl : AngularFirestoreCollection<note>;
 
   constructor(
-    afs: AngularFirestore,
+    public afs: AngularFirestore,
     public fotoService:FotoService,
     public afStorage : AngularFireStorage,
   ) {
@@ -30,8 +30,8 @@ export class Tab2Page {
     this.isiData = this.isiDataColl.valueChanges();
   }
 
-  delete(){
-    
+  delete(judul){
+    this.afs.collection('datanotes').doc(judul).delete();
   }
 
 }
