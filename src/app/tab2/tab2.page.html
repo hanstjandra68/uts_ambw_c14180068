@@ -1,17 +1,23 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 2
+      List Data
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-list *ngFor="let data of isiData | async" [routerLink]="['/tab3',data.judul, data.isi, data.tanggal, data.nilai, data.gambar]">
+    <ion-item>
+      <ion-label>
+        <h1>{{data.judul}}</h1>
+        <p>{{data.isi}}</p>
+        <p>{{data.tanggal}}</p>
+        <p>{{data.nilai}}</p>
+      </ion-label>
+      <ion-img [src]="data.gambar"></ion-img>
+      <ion-button color="danger" (click)="delete()">DELETE</ion-button>
+      <ion-button color="warning" [routerLink]="['/edit',data.judul, data.isi, data.tanggal, data.nilai]">EDIT</ion-button>
+    </ion-item>
+  </ion-list>
 </ion-content>

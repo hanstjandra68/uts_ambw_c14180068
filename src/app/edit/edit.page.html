@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>edit</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+    <ion-label>Judul: </ion-label>
+    <ion-input type="text" [(ngModel)]="judul" disabled></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Isi Notes: </ion-label>
+    <ion-textarea [(ngModel)]="isi"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-input type="date" [(ngModel)]="tanggal"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>Nilai (1-10): </ion-label>
+    <ion-input type="text" [(ngModel)]="nilai"></ion-input>
+  </ion-item>
+  <ion-button (click)="editData()">Edit Data</ion-button>
+</ion-content>

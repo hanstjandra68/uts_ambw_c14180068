@@ -1,17 +1,19 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>
-      Tab 3
+      Detail Data
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+  <h1>Judul: {{judul}}</h1>
+  <p>Isi: {{isi}}</p>
+  <p>Tanggal: {{tanggal}}</p>
+  <p>Nilai: {{nilai}}</p>
+  <h2>Gambar: </h2>
+  <ion-img [src]="gambar"></ion-img>
 </ion-content>
